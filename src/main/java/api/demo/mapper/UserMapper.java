@@ -1,0 +1,31 @@
+package api.demo.mapper;
+
+import api.demo.dto.user.FullUserDto;
+import api.demo.dto.user.ShortUserDto;
+import api.demo.model.User;
+import org.springframework.stereotype.Component;
+
+@Component
+public class UserMapper {
+
+    public ShortUserDto toShortUserDto(User user) {
+
+        ShortUserDto userDto = new ShortUserDto();
+
+        userDto.setUserId(user.getUserId());
+        userDto.setName(user.getName());
+
+        return userDto;
+    }
+
+    public User toUser(FullUserDto userDto) {
+        User user = new User();
+
+        user.setUserId(userDto.getUserId());
+        user.setEmail(userDto.getEmail());
+        user.setName(userDto.getName());
+        user.setPhoneNumber(user.getPhoneNumber());
+
+        return user;
+    }
+}
