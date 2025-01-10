@@ -14,4 +14,5 @@ public class ShortUserDto {
         this.userId = id;
         this.name = name;
     }
+
 }

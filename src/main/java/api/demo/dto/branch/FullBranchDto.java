@@ -5,8 +5,6 @@ import lombok.Data;
 @Data
 public class FullBranchDto {
 
-    Long branchId;
-
     String name;
 
     String address;

@@ -28,6 +28,16 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    public ShortUserDto getById(Long id) {
+        return userMapper.toShortUserDto(repository.findById(id).get());
+    }
+
+    @Override
+    public FullUserDto getByIdFullDto(Long id) {
+        return userMapper.toFullUserDto(repository.findById(id).get());
+    }
+
+    @Override
     public ShortUserDto addNewUser(FullUserDto userDto) {
         return userMapper.toShortUserDto(repository.save(userMapper.toUser(userDto)));
     }

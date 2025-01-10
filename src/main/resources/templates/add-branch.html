@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Добавление новой ветки</title>
+    <meta charset="UTF-8">
+    <title>Adding Branch</title>
+</head>
+<body>
+<h1>Добавление новой ветки</h1>
+
+<form th:action="@{/branch/add-branch}" method="POST" th:object="${fullBranchDto}">
+
+    <div>
+        <label for="name">Название ветки:</label>
+        <input type="text" id="name" name="name" th:field="*{name}" required>
+    </div>
+    <br>
+    <div>
+        <label for="address">Адрес:</label>
+        <input type="text" id="address" name="address" th:field="*{address}" required>
+    </div>
+    <br>
+    <div>
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone" th:field="*{phone}" required>
+    </div>
+    <br>
+    <button type="submit">Добавить ветку</button>
+</form>
+</body>
+</html>

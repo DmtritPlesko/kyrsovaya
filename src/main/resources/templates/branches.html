@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branches</title>
+</head>
+<body>
+    <h1>Branches</h1>
+    <table>
+        <tr>
+            <th>name</th>
+        </tr>
+        <tr th:each="branch : ${branches}">
+            <td><span th:text = "${branch.name}"></span></td>
+        </tr>
+    </table>
+</body>
+</html>

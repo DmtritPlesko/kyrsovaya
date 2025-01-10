@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class FullUserDto {
 
-    Long userId;
-
     String name;
 
     String email;

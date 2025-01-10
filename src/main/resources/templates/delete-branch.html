@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Удаление филиала</title>
+
+</head>
+<body>
+<div class="container">
+    <h1>Удаление филиала</h1>
+
+    <form th:action="@{/branch/delete/{id}}" method="POST">
+        <div>
+            <p>Имя ветки: <span th:text="${fullBranchDto.name}"></span></p>
+        </div>
+        <div>
+            <p>Номер телефона: <span th:text="${fullBranchDto.phone}"></span></p>
+        </div>
+        <div>
+            <p>Адрес: <span th:text= "${fullBranchDto.address}"></span></p>
+        </div>
+
+        <button type="submit">Удалить</button>
+    </form>
+
+    <p>После удаления вы будете перенаправлены на главную страницу.</p>
+</div>
+</body>
+</html>

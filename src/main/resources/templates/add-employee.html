@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Добавление нового сотрудника</title>
+    <meta charset="UTF-8">
+    <title>Adding Employee</title>
+</head>
+<body>
+<h1>Добавление нового сотрудника</h1>
+
+<form th:action="@{/employee/add-employee}" method="POST" th:object="${fullEmployeeDto}">
+    <div>
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" th:field="*{name}" required>
+    </div>
+    <br>
+    <div>
+        <label for="phoneNumber">Номер телефона:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" th:field="*{phoneNumber}" required>
+    </div>
+    <br>
+    <div>
+        <label for="title">Должность:</label>
+        <select id="title" name="title" th:field="*{title}" required>
+            <option value="">Выберите должность</option>
+            <option value="Менеджер">Менеджер</option>
+            <option value="Специалист">Специалист</option>
+            <option value="Инженер">Инженер</option>
+            <option value="Аналитик">Аналитик</option>
+        </select>
+    </div>
+    <br>
+
+    <div>
+        <label for="availability">Доступность:</label>
+        <select id="availability" name="availability">
+            <option value="false">Не доступен</option>
+            <option value="true">Доступен</option>
+        </select>
+    </div>
+    <br>
+    <button type="submit">Добавить сотрудника</button>
+</form>
+</body>
+</html>

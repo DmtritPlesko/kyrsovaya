@@ -25,7 +25,7 @@ public class User {
     @Email(message = "Неверный формат почты")
     String email;
 
-    @Size(min = 11)
+    @Size(max = 11)
     String phoneNumber;
 
     public User (Long id,String name) {

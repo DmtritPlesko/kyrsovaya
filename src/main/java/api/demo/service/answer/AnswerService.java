@@ -8,6 +8,10 @@ public interface AnswerService {
 
     List<ShortAnswerDto> getAllAnswers();
 
+    ShortAnswerDto getAnsById(Long id);
+
+    FullAnswerDto getByIdDto(Long id);
+
     ShortAnswerDto addNewAnswer(FullAnswerDto answerDto);
 
     void deleteAnswer(Long id);

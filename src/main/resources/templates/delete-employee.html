@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Удаление сотрудника</title>
+</head>
+<body>
+<div class="container">
+    <h1>Удаление сотрудника</h1>
+
+    <form th:action="@{/employee/delete/{id}}" method="POST">
+        <div>
+            <p>Имя работника: <span th:text="${fullEmployeeDto.name}"></span></p>
+        </div>
+        <div>
+            <p>Номер телефона: <span th:text="${fullEmployeeDto.phoneNumber}"></span></p>
+        </div>
+        <div>
+            <p>Дллжность: <span th:text= "${fullEmployeeDto.title}"></span></p>
+        </div>
+
+        <button type="submit">Удалить</button>
+    </form>
+
+    <p>После удаления вы будете перенаправлены на главную страницу.</p>
+</div>
+</body>
+</html>

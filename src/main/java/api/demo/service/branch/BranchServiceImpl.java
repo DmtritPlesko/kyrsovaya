@@ -39,4 +39,14 @@ public class BranchServiceImpl implements BranchService{
             throw new IllegalArgumentException("Запись Branch с id = "+ id+ " не существует");
         }
     }
+
+    @Override
+    public ShortBranchDto getById(Long id) {
+       return branchMapper.toShortBranchDto(repository.findById(id).get());
+    }
+
+    @Override
+    public FullBranchDto getByIdDto(Long id) {
+        return branchMapper.toFullBranchDto(repository.findById(id).get());
+    }
 }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding Answer</title>
+</head>
+<body>
+<h1>Добавление нового ответа</h1>
+
+<form th:action="@{/answer/add-answers}"th:object="${fullAnswerDto}"  method="POST" >
+    <div>
+        <label for="employeeId">ID Работника:</label>
+        <input type="number" id="employeeId" name="employeeId" th:field="*{employeeId}">
+    </div>
+    <br>
+    <div>
+        <label for="description">Описание:</label>
+        <textarea id="description" name="description" th:field="*{description}"></textarea>
+    </div>
+    <br>
+    <div>
+        <label for="dataOfResponse">Дата ответа:</label>
+        <input type="datetime-local" id="dataOfResponse" name="dataOfResponse" th:field="*{dataOfResponse}"/>
+    </div>
+
+    <br>
+    <button type="submit">Добавить ответ</button>
+</form>
+
+</body>
+</html>

@@ -8,6 +8,10 @@ public interface BranchService {
 
     List<ShortBranchDto> getAllBranches();
 
+    ShortBranchDto getById(Long id);
+
+    FullBranchDto getByIdDto(Long id);
+
     ShortBranchDto addNewBranch(FullBranchDto branchDto);
 
     void deleteBranch(Long id);

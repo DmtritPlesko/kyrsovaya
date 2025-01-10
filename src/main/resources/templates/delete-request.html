@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Удаление запроса</title>
+</head>
+<body>
+<h1>Удаление запроса</h1>
+
+<form th:action="@{/request/delete/{id}}" method="POST">
+    <div>
+        <p>ID работника: <span th:text="${fullRequestDto.employeeId}"></span></p>
+    </div>
+    <div>
+        <p>Пользователь: <span th:text="${fullRequestDto.userId}"></span></p>
+    </div>
+    <div>
+        <p>Статус: <span th:text= "${fullRequestDto.status}"></span></p>
+    </div>
+    <div>
+        <p>Описание: <span th:text="${fullRequestDto.description}"></span></p>
+    </div>
+    <button type="submit">Удалить</button>
+    <a href="/request">Отмена</a>
+</form>
+</body>
+</html>

@@ -25,7 +25,7 @@ public class Employee {
     String name;
 
     @NotBlank
-    @Size(min = 11)
+    @Size(max = 11)
     String phoneNumber;
 
     @NotBlank

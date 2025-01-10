@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees</title>
+</head>
+<body>
+<h1>Requests</h1>
+<table>
+    <tr>
+        <th>Description</th>
+    </tr>
+    <tr th:each="request : ${requests}">
+        <td><span th:text = "${request.description}"></span></td>
+    </tr>
+</table>
+</body>
+</html>

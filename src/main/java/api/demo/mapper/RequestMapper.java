@@ -12,7 +12,7 @@ public class RequestMapper {
         ShortRequestDto requestDto = new ShortRequestDto();
 
         requestDto.setTicketId(request.getTicketId());
-        requestDto.setDescription(requestDto.getDescription());
+        requestDto.setDescription(request.getDescription());
 
         return requestDto;
     }
@@ -20,12 +20,24 @@ public class RequestMapper {
     public Request toRequest(FullRequestDto requestDto) {
         Request request = new Request();
 
-        request.setTicketId(requestDto.getTicketId());
         request.setStatus(requestDto.getStatus());
         request.setDescription(requestDto.getDescription());
         request.setCloseDate(requestDto.getCloseDate());
         request.setDateCreated(requestDto.getDateCreated());
 
         return request;
+    }
+
+    public FullRequestDto toFullRequestDto(Request request) {
+        FullRequestDto fullRequestDto = new FullRequestDto();
+
+        fullRequestDto.setUserId(request.getUserId());
+        fullRequestDto.setEmployeeId(request.getEmployeeId());
+        fullRequestDto.setStatus(request.getStatus());
+        fullRequestDto.setDescription(request.getDescription());
+        fullRequestDto.setDateCreated(request.getDateCreated());
+        fullRequestDto.setCloseDate(request.getCloseDate());
+
+        return fullRequestDto;
     }
 }

@@ -27,6 +27,16 @@ public class RequestServiceImpl implements RequestService {
     }
 
     @Override
+    public ShortRequestDto getReqById(Long id) {
+        return requestMapper.toShortRequestDto(repository.findById(id).get());
+    }
+
+    @Override
+    public FullRequestDto getByIdDto(Long id) {
+        return requestMapper.toFullRequestDto(repository.findById(id).get());
+    }
+
+    @Override
     public ShortRequestDto addNewRequest(FullRequestDto requestDto) {
         return requestMapper.toShortRequestDto(repository.save(requestMapper.toRequest(requestDto)));
     }

@@ -21,11 +21,20 @@ public class UserMapper {
     public User toUser(FullUserDto userDto) {
         User user = new User();
 
-        user.setUserId(userDto.getUserId());
         user.setEmail(userDto.getEmail());
         user.setName(userDto.getName());
         user.setPhoneNumber(user.getPhoneNumber());
 
         return user;
+    }
+
+    public FullUserDto toFullUserDto(User user) {
+        FullUserDto fullUserDto = new FullUserDto();
+
+        fullUserDto.setName(user.getName());
+        fullUserDto.setEmail(user.getEmail());
+        fullUserDto.setPhoneNumber(user.getPhoneNumber());
+
+        return fullUserDto;
     }
 }

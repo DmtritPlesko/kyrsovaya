@@ -26,6 +26,16 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
+    public ShortEmployeeDto getEmplByID(Long id) {
+        return employeeMapper.toShortEmployeeDto(repository.findById(id).get());
+    }
+
+    @Override
+    public FullEmployeeDto getBuIdDto(Long id) {
+        return employeeMapper.toFullEmployeeDto(repository.findById(id).get());
+    }
+
+    @Override
     public ShortEmployeeDto addNewEmployee(FullEmployeeDto employeeDto) {
         return employeeMapper.toShortEmployeeDto(repository.save(employeeMapper.toEmployee(employeeDto)));
     }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Удаление пользователя</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Удаление пользователя</h1>
+
+<form th:action="@{/user/delete/{id}}" method="POST">
+
+    <h3>Вы уверены, что хотите удалить пользователя?</h3>
+    <br>
+    <p>Имя пользователя: <span th:text="${fullUserDto.name}"></span></p>
+
+    <p>Email: <span th:text="${fullUserDto.email}"></span></p>
+
+    <p>Номер телефона: <span th:text="${fullUserDto.phoneNumber}"></span></p>
+
+    <button type="submit">Удалить</button>
+</form>
+    <br>
+<a href="/user">Вернуться к списку пользователей</a>
+</body>
+</html>

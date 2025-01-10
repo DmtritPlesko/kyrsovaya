@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Добавление нового запроса</title>
+    <meta charset="UTF-8">
+    <title>Adding Request</title>
+</head>
+<body>
+<h1>Добавление нового запроса</h1>
+
+<form th:action="@{/request/add-request}" method="POST" th:object="${fullRequestDto}">
+    <div>
+        <label for="employeeId">ID сотрудника:</label>
+        <input type="number" id="employeeId" name="employeeId" th:field="*{employeeId}" required>
+    </div>
+    <br>
+    <div>
+        <label for="userId">ID пользователя:</label>
+        <input type="number" id="userId" name="userId" th:field="*{userId}" required>
+    </div>
+    <br>
+    <div>
+        <label for="status">Статус:</label>
+        <select id="status" name="status" th:field="*{status}" required>
+            <option value="">Выберите статус</option>
+            <option value="NEW">Новый</option>
+            <option value="IN_PROGRESS">В процессе</option>
+            <option value="CLOSED">Закрыт</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <label for="description">Описание:</label>
+        <textarea id="description" name="description" th:field="*{description}" required></textarea>
+    </div>
+    <br>
+    <div>
+        <label for="dateCreated">Дата создания:</label>
+        <input type="datetime-local" id="dateCreated" name="dateCreated" th:field="*{dateCreated}" required>
+    </div>
+    <br>
+    <div>
+        <label for="closeDate">Дата закрытия:</label>
+        <input type="datetime-local" id="closeDate" name="closeDate" th:field="*{closeDate}">
+    </div>
+    <br>
+    <button type="submit">Добавить запрос</button>
+</form>
+</body>
+</html>

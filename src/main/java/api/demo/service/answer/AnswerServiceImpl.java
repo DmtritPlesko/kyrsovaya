@@ -27,6 +27,16 @@ public class AnswerServiceImpl implements AnswerService{
     }
 
     @Override
+    public ShortAnswerDto getAnsById(Long id) {
+        return answerMapper.toShortAnswerDto(repository.findById(id).get());
+    }
+
+    @Override
+    public FullAnswerDto getByIdDto(Long id) {
+        return answerMapper.toFullAnswerDto(repository.findById(id).get());
+    }
+
+    @Override
     public ShortAnswerDto addNewAnswer(FullAnswerDto answerDto) {
         return answerMapper.toShortAnswerDto(repository.save(answerMapper.toAnswer(answerDto)));
     }

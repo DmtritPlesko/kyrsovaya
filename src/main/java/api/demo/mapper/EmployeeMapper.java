@@ -13,7 +13,7 @@ public class EmployeeMapper {
 
         employeeDto.setEmployeeId(employee.getEmployeeId());
         employeeDto.setName(employee.getName());
-        employeeDto.setTitle(employeeDto.getTitle());
+        employeeDto.setTitle(employee.getTitle());
 
         return employeeDto;
     }
@@ -21,12 +21,22 @@ public class EmployeeMapper {
     public Employee toEmployee(FullEmployeeDto employeeDto) {
         Employee employee = new Employee();
 
-        employee.setEmployeeId(employeeDto.getEmployeeId());
         employee.setName(employeeDto.getName());
         employee.setTitle(employeeDto.getTitle());
         employee.setAvailability(employeeDto.getAvailability());
         employee.setPhoneNumber(employeeDto.getPhoneNumber());
 
         return employee;
+    }
+
+    public FullEmployeeDto toFullEmployeeDto(Employee employee) {
+        FullEmployeeDto fullEmployeeDto = new FullEmployeeDto();
+
+        fullEmployeeDto.setName(employee.getName());
+        fullEmployeeDto.setTitle(employee.getTitle());
+        fullEmployeeDto.setAvailability(employee.getAvailability());
+        fullEmployeeDto.setPhoneNumber(employee.getPhoneNumber());
+
+        return fullEmployeeDto;
     }
 }

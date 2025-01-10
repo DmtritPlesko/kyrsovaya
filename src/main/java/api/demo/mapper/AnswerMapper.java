@@ -2,6 +2,7 @@ package api.demo.mapper;
 
 import api.demo.dto.answer.FullAnswerDto;
 import api.demo.dto.answer.ShortAnswerDto;
+import api.demo.dto.branch.FullBranchDto;
 import api.demo.model.Answer;
 import org.springframework.stereotype.Component;
 
@@ -20,11 +21,19 @@ public class AnswerMapper {
     public Answer toAnswer(FullAnswerDto answerDto) {
         Answer answer = new Answer();
 
-        answer.setAnswerId(answerDto.getAnswerId());
         answer.setDescription(answerDto.getDescription());
         answer.setDataOfResponse(answerDto.getDataOfResponse());
         answer.setEmployeeId(answerDto.getEmployeeId());
 
         return answer;
+    }
+
+    public FullAnswerDto toFullAnswerDto(Answer answer) {
+        FullAnswerDto fullAnswerDto = new FullAnswerDto();
+
+        fullAnswerDto.setDescription(answer.getDescription());
+        fullAnswerDto.setEmployeeId(answer.getEmployeeId());
+
+        return fullAnswerDto;
     }
 }
